@@ -1,0 +1,23 @@
+type,value,description,source
+sha256,0931537889c35226d00ed26962ecacb140521394279eb2ade7e9d2afcf1a7272,gerv.gun - Shiotob/URLZone,pcap + VirusTotal
+sha256,94a0a09ee6a21526ac34d41eabf4ba603e9a30c26e6a1dc072ff45749dfb1fe1,trow.exe - Pushdo/Cutwail,pcap + VirusTotal
+sha256,79d503165d32176842fe386d96c04fb70f6ce1c8a485837957849297e625ea48,wp.exe - Ursnif/Gozi,pcap + VirusTotal
+sha256,9875dac23b48fe6a52681b113be524a18c503df9b16081be73390ea18614ca68,t64.bin - encrypted unknown,pcap + VirusTotal
+sha256,59727ea201d94d471bdbb353b1281cca3c5bebf5305b140a3c017e52a37be702,2017-547805549-231.pdf.js - Nemucod,OSINT
+sha256,64ae13592c5d8b289be81ebb50e054cef49b0bdf50ea92dd44ed611dd274150f,doc.js - Nemucod,OSINT
+domain,matied.com,gerv.gun download,pcap
+domain,centler.at,first check-in,pcap
+ip,119.28.70.207,matied.com and centler.at,pcap
+domain,lounge-haarstudio.nl,trow.exe download,pcap
+ip,145.131.10.21,lounge-haarstudio.nl,pcap
+domain,vantagepointtechnologies.com,wp.exe download,pcap
+ip,143.95.151.192,vantagepointtechnologies.com,pcap
+domain,rts21.co.jp,t64.bin download,pcap
+ip,59.106.164.230,rts21.co.jp,pcap
+url,http://www.feuerwehr-brieselang.de/media/vector.tui,backup download URL in both JS droppers (not seen in pcap),Hybrid Analysis
+ip,208.83.223.34,TLS on port 80 with Tor-style SNI,pcap
+domain,www.kid67ap2i5b5d4ekvcg.com,Tor-style SNI (not a real site),pcap
+ip,212.83.152.59,binary data on port 25,pcap
+ip,195.154.36.12,binary data on port 25,pcap
+user_agent,Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1),Pushdo C2 (fake),pcap
+user_agent,Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5),JS dropper download,pcap
