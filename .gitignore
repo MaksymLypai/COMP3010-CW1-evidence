@@ -1,0 +1,10 @@
+# Never publish the capture or any extracted payloads
+*.pcap
+*.pcapng
+*.exe
+*.gun
+*.bin
+*.dll
+*.js
+*.zip
+quarantine/
