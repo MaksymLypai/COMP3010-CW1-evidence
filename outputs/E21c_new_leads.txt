@@ -1,0 +1,8 @@
+06/27/2017-14:38:34.536182  [**] [1:2014819:5] ET INFO Packed Executable Download [**] [Classification: Misc activity] [Priority: 3] {TCP} 119.28.70.207:80 -> 192.168.1.96:49184
+06/27/2017-14:43:54.162987  [**] [1:2019714:13] ET MALWARE Terse alphanumeric executable downloader high likelihood of being hostile [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 192.168.1.96:49191 -> 143.95.151.192:80
+06/27/2017-14:44:01.459492  [**] [1:2023472:7] ET INFO External IP Lookup Domain (myip .opendns .com in DNS lookup) [**] [Classification: Device Retrieving External IP Address Detected] [Priority: 2] {UDP} 192.168.1.96:59030 -> 208.67.222.222:53
+06/27/2017-14:44:01.439718  [**] [1:2023472:7] ET INFO External IP Lookup Domain (myip .opendns .com in DNS lookup) [**] [Classification: Device Retrieving External IP Address Detected] [Priority: 2] {UDP} 192.168.1.96:59029 -> 208.67.222.222:53
+06/27/2017-14:44:19.021285  [**] [1:2032987:1] ET INFO HTTP Request to a *.tw domain [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 192.168.1.96:49734 -> 104.27.159.122:80
+06/27/2017-14:44:32.873234  [**] [1:2028814:2] ET JA3 Hash - [Abuse.ch] Possible Gozi [**] [Classification: Unknown Traffic] [Priority: 3] {TCP} 192.168.1.96:49932 -> 208.83.223.34:80
+06/27/2017-14:44:32.944951  [**] [1:2018789:5] ET INFO TLS possible TOR SSL traffic [**] [Classification: Misc activity] [Priority: 3] {TCP} 208.83.223.34:80 -> 192.168.1.96:49932
+06/27/2017-14:44:40.578120  [**] [1:2032987:1] ET INFO HTTP Request to a *.tw domain [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 192.168.1.96:50110 -> 104.27.159.122:80

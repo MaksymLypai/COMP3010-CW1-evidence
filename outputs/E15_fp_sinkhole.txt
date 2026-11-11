@@ -1,0 +1,29 @@
+CW1Suricata.txt:ETPRO TROJAN Sinkhole.tech Sinkhole Reply
+CW1Suricata.txt-144.217.254.90 -> 192.168.1.96
+CW1Suricata.txt-IPVer=4 hlen=5 tos=0 dlen=341 ID=0 flags=0 offset=0 ttl=0 chksum=26727
+CW1Suricata.txt-Protocol: 6 sport=80 -> dport=49227
+--
+CW1Suricata.txt:ETPRO TROJAN Sinkhole.tech Sinkhole Reply
+CW1Suricata.txt-144.217.254.90 -> 192.168.1.96
+CW1Suricata.txt-IPVer=4 hlen=5 tos=0 dlen=341 ID=0 flags=0 offset=0 ttl=0 chksum=26727
+CW1Suricata.txt-Protocol: 6 sport=80 -> dport=49231
+--
+CW1Suricata.txt:ET TROJAN Connection to Fitsec Sinkhole IP (Possible Infected Host)
+CW1Suricata.txt-192.168.1.96 -> 193.166.255.171
+CW1Suricata.txt-IPVer=4 hlen=5 tos=0 dlen=52 ID=2734 flags=2 offset=0 ttl=128 chksum=27835
+CW1Suricata.txt-Protocol: 6 sport=49266 -> dport=80
+--
+CW1Suricata.txt:ET TROJAN Possible Compromised Host Sinkhole Cookie Value Snkz
+CW1Suricata.txt-212.61.180.100 -> 192.168.1.96
+CW1Suricata.txt-IPVer=4 hlen=5 tos=0 dlen=411 ID=0 flags=0 offset=0 ttl=0 chksum=28339
+CW1Suricata.txt-Protocol: 6 sport=80 -> dport=49533
+--
+CW1Suricata.txt:ET TROJAN Possible Downadup/Conficker-C P2P encrypted traffic UDP Ping Packet (bit value 1)
+CW1Suricata.txt-192.168.1.96 -> 224.0.0.252
+CW1Suricata.txt-IPVer=4 hlen=5 tos=0 dlen=50 ID=8725 flags=0 offset=0 ttl=1 chksum=62625
+CW1Suricata.txt-Protocol: 17 sport=56075 -> dport=5355
+--
+CW1Snort.txt:[**] [1:28406:1] MALWARE-CNC Win.Trojan.Kazy variant outbound connection [**]
+CW1Snort.txt-[Classification: A Network Trojan was detected] [Priority: 1] 
+CW1Snort.txt-06/27-13:43:54.128138 192.168.1.96:49191 -> 143.95.151.192:80
+CW1Snort.txt-TCP TTL:49 TOS:0x8 ID:1431 IpLen:20 DgmLen:188 DF

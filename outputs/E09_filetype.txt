@@ -1,0 +1,4 @@
+gerv.gun: PE32 executable for MS Windows 4.00 (GUI), Intel i386, 4 sections
+t64.bin:  data
+trow.exe: PE32 executable for MS Windows 5.00 (GUI), Intel i386, 4 sections
+wp.exe:   PE32 executable for MS Windows 4.00 (GUI), Intel i386, 4 sections

@@ -1,0 +1,4 @@
+06/27/2017-14:38:34.112671  [**] [1:1000001:1] CW1 Scripted download via WinHttpRequest [**] [Classification: (null)] [Priority: 3] {TCP} 192.168.1.96:49184 -> 119.28.70.207:80
+06/27/2017-14:38:34.535000  [**] [1:1000002:1] CW1 Windows PE in HTTP response [**] [Classification: (null)] [Priority: 3] {TCP} 119.28.70.207:80 -> 192.168.1.96:49184
+06/27/2017-14:43:54.212876  [**] [1:1000002:1] CW1 Windows PE in HTTP response [**] [Classification: (null)] [Priority: 3] {TCP} 143.95.151.192:80 -> 192.168.1.96:49191
+06/27/2017-14:43:52.889761  [**] [1:1000002:1] CW1 Windows PE in HTTP response [**] [Classification: (null)] [Priority: 3] {TCP} 145.131.10.21:80 -> 192.168.1.96:49190

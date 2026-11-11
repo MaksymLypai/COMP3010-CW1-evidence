@@ -1,0 +1,16 @@
+     40 SURICATA Applayer Detect protocol only one direction
+     28 SURICATA HTTP Response excessive header repetition
+      4 ET INFO Observed DNS Query to .biz TLD
+      3 ET INFO PE EXE or DLL Windows file download HTTP
+      2 ET INFO HTTP Request to a *.tw domain
+      2 ET INFO External IP Lookup Domain (myip .opendns .com in DNS lookup)
+      1 SURICATA HTTP invalid response field folding
+      1 ET MALWARE Terse alphanumeric executable downloader high likelihood of being hostile
+      1 ET MALWARE Pushdo.S CnC response
+      1 ET MALWARE Possible Compromised Host AnubisNetworks Sinkhole Cookie Value btst
+      1 ET MALWARE Possible Compromised Host AnubisNetworks Sinkhole Cookie Value Snkz
+      1 ET MALWARE Backdoor.Win32.Pushdo.s Checkin
+      1 ET JA3 Hash - [Abuse.ch] Possible Gozi
+      1 ET INFO WinHttpRequest Downloading EXE
+      1 ET INFO TLS possible TOR SSL traffic
+      1 ET INFO Packed Executable Download

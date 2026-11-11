@@ -1,0 +1,39 @@
+    1  sudo apt update && sudo apt upgrade -y
+    2  sudo apt install -y wireshark tshark open-vm-tools-desktop
+    3  sudo usermod -aG wireshark $USER && sudo reboot
+    4  tshark -v | head -1 && groups~
+    5  tshark -v | head -1 && groups
+    6  ls /mnt/hgfs/
+    7  mkdir -p ~/cw1/{screenshots,outputs,quarantine} && cp /mnt/hgfs/COMP3010/COMP3010CW1.pcap /mnt/hgfs/COMP3010/CW1*.txt ~/cw1/ && ls -la ~/cw1
+    8  sudo apt install -y suricata && sudo suricata-update
+    9  suricata -V && grep -i "pushdo" /var/lib/suricata/rules/suricata.rules | tee ~/cw1/outputs/E16_pushdo_rules.txt | wc -l
+   10  grep -i "pushdo" /var/lib/suricata/rules/suricata.rules | grep -vc '^#'
+   11  clear && cd ~/cw1 && sha256sum COMP3010CW1.pcap | tee outputs/E01_pcap_hash.txt && ip -br addr && ls /mnt/hgfs/
+   12  cd ~/cw1/quarantine && find . -type f ! -name 'gerv.gun' ! -name 'trow.exe' ! -name 'wp.exe' ! -name 't64.bin' -delete && ls -l
+   13  clear && cd ~/cw1/quarantine && ls -l && sha256sum * | tee ../outputs/E09_sha256.txt && file * | tee ../outputs/E09_filetype.txt
+   14  clear && cd ~/cw1 && grep '^\[\*\*\]' CW1Snort.txt | sort | uniq -c | sort -rn | tee outputs/E06_snort_counts.txt
+   15  clear && grep -E '^(ET|ETPRO|GPL)' CW1Suricata.txt | sort | uniq -c | sort -rn | tee outputs/E07_suricata_counts.txt
+   16  clear && grep -A3 -E 'Sinkhole|Conficker|Kazy' CW1Suricata.txt CW1Snort.txt | tee outputs/E15_fp_sinkhole.txt
+   17  clear && echo "--- Snort (first alert) ---" && head -3 CW1Snort.txt && echo "--- Suricata (first alert) ---" && sed -n '2,7p' CW1Suricata.txt
+   18  clear && cat outputs/E16_pushdo_rules.txt
+   19  clear && cd ~/cw1 && mkdir -p outputs/suricata_modern && sudo suricata -r COMP3010CW1.pcap -k none -S /var/lib/suricata/rules/suricata.rules -l outputs/suricata_modern
+   20  clear && sed -E 's/.*\[\*\*\] \[[0-9:]+\] (.*) \[\*\*\].*/\1/' outputs/suricata_modern/fast.log | sort | uniq -c | sort -rn | tee outputs/E21_modern_counts.txt
+   21  clear && grep -E 'Gozi|TOR|Packed|Terse|opendns|\.tw' outputs/suricata_modern/fast.log | tee outputs/E21c_new_leads.txt
+   22  clear && tshark -r COMP3010CW1.pcap -d tcp.port==80,tls -Y 'ip.addr==208.83.223.34 && tls.handshake' -T fields -e frame.number -e frame.time_utc -e ip.src -e ip.dst -e tls.handshake.type -e tls.handshake.extensions_server_name | tee outputs/E21d_tls_208.txt
+   23  clear && cat COMP3010CW1.pcap | tshark -r - -d tcp.port==80,tls -Y 'ip.addr==208.83.223.34 && tls.handshake' -T fields -e frame.number -e frame.time_utc -e ip.src -e ip.dst -e tls.handshake.type -e tls.handshake.extensions_server_name | tee outputs/E21d_tls_208.txt
+   24  clear && cd ~/cw1 && cat > local.rules << 'EOF'
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"CW1 Scripted download via WinHttpRequest"; flow:established,to_server; http.user_agent; content:"WinHttp.WinHttpRequest"; sid:1000001; rev:1;)
+alert http $EXTERNAL_NET any -> $HOME_NET any (msg:"CW1 Windows PE in HTTP response"; flow:established,to_client; file.data; content:"MZ"; startswith; sid:1000002; rev:1;)
+EOF
+
+   25  mkdir -p outputs/suricata_custom && sudo suricata -r COMP3010CW1.pcap -k none -S local.rules -l outputs/suricata_custom && clear && cat local.rules && echo "--- alerts ---" && cat outputs/suricata_custom/fast.log | tee outputs/E17_custom_rules.txt
+   26  clear && cd ~/cw1 && P=COMP3010CW1.pcap
+   27  cat $P | tshark -r - -q -z endpoints,ip > outputs/ioc_endpoints_ip.txt
+   28  cat $P | tshark -r - -Y http.request -T fields -e frame.time_utc -e ip.dst -e http.host -e http.request.method -e http.request.uri -e http.user_agent > outputs/ioc_http_requests.tsv
+   29  cat $P | tshark -r - -Y 'dns.flags.response==0' -T fields -e dns.qry.name | sort -u > outputs/ioc_dns_queries.txt
+   30  cat $P | tshark -r - -Y 'tcp.flags.syn==1 && tcp.flags.ack==0 && tcp.dstport==25' -T fields -e ip.dst | sort -u > outputs/ioc_smtp_servers.txt
+   31  cat $P | tshark -r - -Y 'http.request' -T fields -e http.user_agent | sort | uniq -c | sort -rn > outputs/ioc_user_agents.txt
+   32  cat $P | tshark -r - -q -z io,phs > outputs/protocol_hierarchy.txt
+   33  cat $P | capinfos - > outputs/capinfos.txt 2>&1 || capinfos $P > outputs/capinfos.txt
+   34  wc -l outputs/ioc_*; cat outputs/ioc_user_agents.txt
+   35  clear && cd ~/cw1 && history > outputs/bash_history.txt && rm -rf quarantine && ls -la ~/cw1 && ls outputs
