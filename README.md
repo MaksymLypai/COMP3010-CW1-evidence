@@ -19,6 +19,7 @@ Note: there is no malware and no pcap in here. I hashed the payloads in the isol
 | `notes/analyst-notes.md` | Working notes from the analysis, including mistakes and how I corrected them |
 | `notes/timeline.md` | Timeline of the incident with frame numbers and evidence references |
 | `notes/iocs.csv` | Indicators of compromise in a machine-readable format |
+| `ai-use/` | Log of how I used AI tools during the coursework |
 
 ## Environment and method
 
